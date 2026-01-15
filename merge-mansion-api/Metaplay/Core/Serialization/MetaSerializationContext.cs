@@ -19,7 +19,9 @@ namespace Metaplay.Core.Serialization
         // To keep current code running, this stays here with double the capacity, until further research
         // CUSTOM: As of version 25.01.01 there is at least one instance in the data, where a collection exceeds double the capacity
         // To keep current code running, this is changed to triple the capacity, until further research
-        public int MaxCollectionSize => DefaultMaxCollectionSize * 3;
+        // CUSTOM: As of version 25.10.03 there is at least one instance in the data, where a collection exceeds triple the capacity
+        // To keep current code running, this is changed to quadruple the capacity, until further research
+        public int MaxCollectionSize => DefaultMaxCollectionSize * 4;
 
         public MetaSerializationContext(MetaSerializationFlags flags, IGameConfigDataResolver resolver, int? logicVersion, StringBuilder debugStream)
         {
