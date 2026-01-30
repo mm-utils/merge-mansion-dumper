@@ -6,7 +6,7 @@ using GameLogic.Hotspots;
 namespace Game.Cloud.Config
 {
     [MetaSerializableDerived(1)]
-    public class HotspotDef : ConfigDefinition<HotspotId, HotspotDefinition>
+    public class HotspotDef : ConfigDefinition<HotspotId, IHotspotDefinition>
     {
         public HotspotDef(HotspotId key)
         {

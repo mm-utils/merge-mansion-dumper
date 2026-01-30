@@ -4,6 +4,9 @@ using GameLogic.Player.Rewards;
 using System;
 using Metaplay.Core;
 using System.Runtime.Serialization;
+using System.Collections.Generic;
+using GameLogic.Player.Leaderboard.BoultonLeague;
+using Metacore.MergeMansion.Common.Options;
 
 namespace Code.GameLogic.GameEvents
 {
@@ -36,11 +39,6 @@ namespace Code.GameLogic.GameEvents
 
         [IgnoreDataMember]
         public IStringId Id { get; }
-
-        [IgnoreDataMember]
-        public int Points { get; }
-        public EventGroupId GroupId { get; }
-        public string EventId { get; }
         public int Priority { get; }
         public string SharedEventId { get; }
 
@@ -59,5 +57,9 @@ namespace Code.GameLogic.GameEvents
 
         [MetaMember(10, (MetaMemberFlags)0)]
         public bool Joining { get; set; }
+
+        [IgnoreDataMember]
+        private List<BoultonLeagueDivisionParticipantSnapshot> _lastLeaderboardEntries;
+        public Option<EventGroupId> GroupIdOption { get; }
     }
 }

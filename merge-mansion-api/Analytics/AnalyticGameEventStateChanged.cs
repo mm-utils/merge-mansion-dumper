@@ -34,5 +34,10 @@ namespace Analytics
         public AnalyticGameEventStateChanged(string eventId, string state, int? level)
         {
         }
+
+        [MetaMember(4, (MetaMemberFlags)0)]
+        [JsonProperty("segmentation_track_id")]
+        [Description("The Track ID for the event")]
+        public string SegmentationTrackId { get; set; }
     }
 }

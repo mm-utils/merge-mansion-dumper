@@ -6,12 +6,13 @@ using GameLogic.Player.Requirements;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Code.GameLogic.Config;
+using Metacore.MergeMansion.Common.Options;
 
 namespace Code.GameLogic.GameEvents.SoloMilestone
 {
     [MetaSerializable]
     [MetaActivableConfigData("SoloMilestoneEvent", false, true)]
-    public class SoloMilestoneEventInfo : ICoreSupportingEventInfo<SoloMilestoneEventId>, IMetaActivableConfigData<SoloMilestoneEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<SoloMilestoneEventId>, IHasGameConfigKey<SoloMilestoneEventId>, IMetaActivableInfo<SoloMilestoneEventId>, IHasRequirements, ICoreSupportingEventInfo, IEventSharedInfo, IValidatable
+    public class SoloMilestoneEventInfo : ICoreSupportingEventInfo<SoloMilestoneEventId>, IMetaActivableConfigData<SoloMilestoneEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<SoloMilestoneEventId>, IHasGameConfigKey<SoloMilestoneEventId>, IMetaActivableInfo<SoloMilestoneEventId>, IHasRequirement, ICoreSupportingEventInfo, IEventSharedInfo, IValidatable
     {
         [MetaMember(1, (MetaMemberFlags)0)]
         public SoloMilestoneEventId ConfigKey { get; set; }
@@ -72,6 +73,7 @@ namespace Code.GameLogic.GameEvents.SoloMilestone
         public string CoreSupportingEventDisplayName { get; }
         public string CoreSupportingEventConfigKey { get; }
         public CoreSupportingEventType CoreSupportingEventType { get; }
-        public IEnumerable<PlayerRequirement> Requirements { get; }
+        public Option<EventGroupId> GroupIdOption { get; }
+        public PlayerRequirement Requirement { get; }
     }
 }

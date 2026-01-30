@@ -29,7 +29,6 @@ namespace Code.GameLogic.ProgressionTracks
         public bool FinalRewardClaimed { get; set; }
         public bool IsCompleted { get; }
         public ProgressionTrackId ConfigKey { get; }
-        public int Points { get; }
         public ILevelEventInfo LevelEventInfo { get; }
         public IStringId Id { get; }
     }

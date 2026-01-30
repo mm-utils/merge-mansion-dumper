@@ -22,8 +22,6 @@ namespace Code.GameLogic.IAP
         public static string ShowMethodPopupOpen { get; }
         public static string ShowMethodPopupClose { get; }
         public static string ShowMethodPendingTimeExtensionOffer { get; }
-        public static string ShowMethodEventPassPurchaseStyleDefault { get; }
-        public static string ShowMethodEventPassPurchaseStyleRewards { get; }
         public static string ShowMethodExtendGameEvent { get; }
         public static string ShowMethodPromptOpenShopNotYetOpened { get; }
         public static string ShowMethodShopHasARefreshedSection { get; }
@@ -60,5 +58,13 @@ namespace Code.GameLogic.IAP
         public OfferPopupTrigger(OfferPopupTriggerId configKey, int maxTriggersPerSession, int maxTriggersTotal, List<PlayerRequirement> triggerRequirements, bool activatesOfferGroup, Dictionary<OfferPopupTriggerPlacementType, List<string>> triggerPlacements, MetaDuration? maxWaitTimerToPrompt)
         {
         }
+
+        public static string ShowMethodEventLastChance { get; }
+        public static string ShowMethodEventBackToBack { get; }
+        public static string ShowMethodEventLevelReached { get; }
+        public static string ShowMethodEventRewardRequiresPurchase { get; }
+        public static string ShowMethodBuyMoreEnergy { get; }
+        public static string ShowMethodInventory { get; }
+        public static string ShowMethodGenericAutomatic { get; }
     }
 }

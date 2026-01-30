@@ -5,6 +5,7 @@ using Metaplay.Core.Model;
 using GameLogic.Utility.Debugging;
 using GameLogic.MergeChains;
 using System;
+using GameLogic.Config;
 
 namespace GameLogic.Player.Items.Bubble
 {
@@ -48,7 +49,8 @@ namespace GameLogic.Player.Items.Bubble
         }
 
         [MetaMember(6, (MetaMemberFlags)0)]
-        private List<MetaRef<MergeChainDefinition>> ChainsWithSimplifiedLogic { get; set; }
+        [MetaOnMemberDeserializationFailure("FixMergeChainRefList")]
+        private List<MergeChainDef> ChainsWithSimplifiedLogic { get; set; }
 
         private BracketedBubbleLogic()
         {

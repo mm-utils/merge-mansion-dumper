@@ -10,13 +10,14 @@ using GameLogic.Player.Requirements;
 using System;
 using System.Runtime.Serialization;
 using Code.GameLogic.IAP;
+using Metacore.MergeMansion.Common.Options;
 
 namespace Code.GameLogic.GameEvents
 {
     [MetaSerializable]
     [MetaActivableConfigData("ShopEvent", false, true)]
     [MetaBlockedMembers(new int[] { 6, 7, 8, 9, 12, 13, 14, 15, 21, 24, 25, 26, 27 })]
-    public class ShopEventInfo : IMetaActivableConfigData<EventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<EventId>, IHasGameConfigKey<EventId>, IMetaActivableInfo<EventId>, IValidatable, IEventSharedInfo, IHasRequirements
+    public class ShopEventInfo : IMetaActivableConfigData<EventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<EventId>, IHasGameConfigKey<EventId>, IMetaActivableInfo<EventId>, IValidatable, IEventSharedInfo, IHasRequirement
     {
         [MetaMember(1, (MetaMemberFlags)0)]
         public EventId EventId { get; set; }
@@ -121,6 +122,7 @@ namespace Code.GameLogic.GameEvents
         {
         }
 
-        public IEnumerable<PlayerRequirement> Requirements { get; }
+        public Option<EventGroupId> GroupIdOption { get; }
+        public PlayerRequirement Requirement { get; }
     }
 }

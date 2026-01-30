@@ -15,13 +15,14 @@ using System.Runtime.Serialization;
 using GameLogic.Player.Rewards;
 using Merge;
 using Code.GameLogic.IAP;
+using Metacore.MergeMansion.Common.Options;
 
 namespace Code.GameLogic.GameEvents
 {
     [DefaultMember("Item")]
     [MetaSerializable]
     [MetaActivableConfigData("SideBoardEvent", false, true)]
-    public class SideBoardEventInfo : IMetaActivableConfigData<SideBoardEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<SideBoardEventId>, IHasGameConfigKey<SideBoardEventId>, IMetaActivableInfo<SideBoardEventId>, IBoardEventInfo, IHasRequirements, IEventSharedInfo
+    public class SideBoardEventInfo : IMetaActivableConfigData<SideBoardEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<SideBoardEventId>, IHasGameConfigKey<SideBoardEventId>, IMetaActivableInfo<SideBoardEventId>, IBoardEventInfo, IHasRequirement, IEventSharedInfo
     {
         [MetaMember(1, (MetaMemberFlags)0)]
         public SideBoardEventId SideBoardEventId { get; set; }
@@ -180,6 +181,7 @@ namespace Code.GameLogic.GameEvents
         [MetaMember(29, (MetaMemberFlags)0)]
         [MetaOnMemberDeserializationFailure("FixItemRef")]
         public ItemDef ResourceItemCollectableDef { get; set; }
-        public IEnumerable<PlayerRequirement> Requirements { get; }
+        public Option<EventGroupId> GroupIdOption { get; }
+        public PlayerRequirement Requirement { get; }
     }
 }

@@ -13,6 +13,7 @@ using Metaplay.Core.Math;
 using GameLogic.MergeChains;
 using Metaplay.Core.Player;
 using Code.GameLogic.IAP;
+using Code.GameLogic.ProgressionTracks;
 
 namespace Code.GameLogic.GameEvents
 {
@@ -80,5 +81,6 @@ namespace Code.GameLogic.GameEvents
         private string ConnectedMinigameId { get; set; }
         private string PrefabsOverride { get; set; }
         private bool ForceLocationTravel { get; set; }
+        private List<ProgressionTrackId> EventProgressionTracks { get; set; }
     }
 }

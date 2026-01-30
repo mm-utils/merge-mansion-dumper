@@ -63,7 +63,6 @@ namespace Code.GameLogic.GameEvents
         [MetaMember(18, (MetaMemberFlags)0)]
         public Dictionary<int, ProgressionEventRewardClaimStatus> PremiumRewardsStatus { get; set; }
         public IStringId Id { get; }
-        public int Points { get; }
 
         private ProgressionPackEventModel()
         {

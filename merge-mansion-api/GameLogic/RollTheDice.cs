@@ -46,5 +46,8 @@ namespace GameLogic
 
         [MetaMember(13, (MetaMemberFlags)0)]
         public List<int> InitialSequenceFaceIndices { get; set; }
+
+        [MetaMember(14, (MetaMemberFlags)0)]
+        public bool IsCurrentLevelCompleted { get; set; }
     }
 }

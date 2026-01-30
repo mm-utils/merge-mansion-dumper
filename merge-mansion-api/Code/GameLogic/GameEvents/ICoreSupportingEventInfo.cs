@@ -5,7 +5,7 @@ using GameLogic.Player.Requirements;
 
 namespace Code.GameLogic.GameEvents
 {
-    public interface ICoreSupportingEventInfo<TId> : IMetaActivableConfigData<TId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<TId>, IHasGameConfigKey<TId>, IMetaActivableInfo<TId>, IHasRequirements, ICoreSupportingEventInfo, IEventSharedInfo
+    public interface ICoreSupportingEventInfo<TId> : IMetaActivableConfigData<TId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<TId>, IHasGameConfigKey<TId>, IMetaActivableInfo<TId>, IHasRequirement, ICoreSupportingEventInfo, IEventSharedInfo
     {
     }
 

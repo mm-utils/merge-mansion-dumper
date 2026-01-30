@@ -182,6 +182,10 @@ namespace Analytics
         AppStartPerformance = 171,
         RollTheDiceRoll = 172,
         SessionStartConfigStatus = 173,
-        InAppPurchaseRefunded = 174
+        InAppPurchaseRefunded = 174,
+        NotificationPermissionAnswered = 175,
+        NotificationReceived = 176,
+        LeagueNotStarted = 177,
+        ClientVersionCheck = 178
     }
 }

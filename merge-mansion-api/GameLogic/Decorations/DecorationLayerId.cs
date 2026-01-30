@@ -130,6 +130,8 @@ namespace GameLogic.Decorations
         LDE_HolidayOddities2025_TC1 = 121,
         LDE_HolidayOddities2025_TC2 = 122,
         SP_FerretPet2025_TA1 = 123,
-        SP_FerretPet2025_TA2 = 124
+        SP_FerretPet2025_TA2 = 124,
+        SP_CowPet2026_TA1 = 125,
+        SP_CowPet2026_TA2 = 126
     }
 }

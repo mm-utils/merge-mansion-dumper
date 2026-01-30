@@ -14,13 +14,14 @@ using Merge;
 using GameLogic.Config;
 using GameLogic.Player.Rewards;
 using Code.GameLogic.IAP;
+using Metacore.MergeMansion.Common.Options;
 
 namespace Code.GameLogic.GameEvents
 {
     [MetaSerializable]
     [MetaBlockedMembers(new int[] { 10, 11, 17 })]
     [MetaActivableConfigData("MysteryMachineEvent", false, true)]
-    public class MysteryMachineEventInfo : IMetaActivableConfigData<MysteryMachineEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<MysteryMachineEventId>, IHasGameConfigKey<MysteryMachineEventId>, IMetaActivableInfo<MysteryMachineEventId>, IBoardEventInfo, IHasRequirements, IEventSharedInfo
+    public class MysteryMachineEventInfo : IMetaActivableConfigData<MysteryMachineEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<MysteryMachineEventId>, IHasGameConfigKey<MysteryMachineEventId>, IMetaActivableInfo<MysteryMachineEventId>, IBoardEventInfo, IHasRequirement, IEventSharedInfo
     {
         [MetaMember(1, (MetaMemberFlags)0)]
         public MysteryMachineEventId ConfigKey { get; set; }
@@ -99,7 +100,6 @@ namespace Code.GameLogic.GameEvents
 
         [MetaMember(16, (MetaMemberFlags)0)]
         public MetaRef<MysteryMachineScreenInfo> ScreenRef { get; set; }
-        public EventGroupId GroupId { get; set; }
 
         [MetaMember(18, (MetaMemberFlags)0)]
         public int Priority { get; set; }
@@ -116,6 +116,7 @@ namespace Code.GameLogic.GameEvents
         {
         }
 
-        public IEnumerable<PlayerRequirement> Requirements { get; }
+        public Option<EventGroupId> GroupIdOption { get; }
+        public PlayerRequirement Requirement { get; }
     }
 }

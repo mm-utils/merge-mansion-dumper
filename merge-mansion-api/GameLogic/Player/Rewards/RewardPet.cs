@@ -1,5 +1,6 @@
 using Metaplay.Core.Model;
 using Metaplay.Core;
+using System.Runtime.Serialization;
 
 namespace GameLogic.Player.Rewards
 {
@@ -8,7 +9,11 @@ namespace GameLogic.Player.Rewards
     {
         [MetaMember(1, (MetaMemberFlags)0)]
         private MetaRef<PetInfo> PetRef { get; set; }
+
+        [IgnoreDataMember]
         public PetId PetId { get; }
+
+        [IgnoreDataMember]
         public PetInfo PetInfo { get; }
 
         public RewardPet()

@@ -11,7 +11,7 @@ namespace Code.GameLogic.GameEvents
 {
     [MetaSerializable]
     [MetaActivableConfigData("TemporaryCardCollectionEvent", false, true)]
-    public class TemporaryCardCollectionEventInfo : IMetaActivableConfigData<TemporaryCardCollectionEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<TemporaryCardCollectionEventId>, IHasGameConfigKey<TemporaryCardCollectionEventId>, IMetaActivableInfo<TemporaryCardCollectionEventId>, IHasRequirements
+    public class TemporaryCardCollectionEventInfo : IMetaActivableConfigData<TemporaryCardCollectionEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<TemporaryCardCollectionEventId>, IHasGameConfigKey<TemporaryCardCollectionEventId>, IMetaActivableInfo<TemporaryCardCollectionEventId>, IHasRequirement
     {
         [MetaMember(1, (MetaMemberFlags)0)]
         public TemporaryCardCollectionEventId ConfigKey { get; set; }
@@ -74,6 +74,6 @@ namespace Code.GameLogic.GameEvents
         {
         }
 
-        public IEnumerable<PlayerRequirement> Requirements { get; }
+        public PlayerRequirement Requirement { get; }
     }
 }

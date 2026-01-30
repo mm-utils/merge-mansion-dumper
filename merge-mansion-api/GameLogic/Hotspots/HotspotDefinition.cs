@@ -21,7 +21,7 @@ namespace GameLogic.Hotspots
 {
     [MetaSerializable]
     [MetaBlockedMembers(new int[] { 25 })]
-    public class HotspotDefinition : IGameConfigData<HotspotId>, IGameConfigData, IHasGameConfigKey<HotspotId>, IHasRequirements, IValidatable
+    public class HotspotDefinition : IGameConfigData<HotspotId>, IGameConfigData, IHasGameConfigKey<HotspotId>, IValidatable, IHotspotDefinition, IHasRequirements
     {
         [MetaMember(1, (MetaMemberFlags)0)]
         public HotspotId Id { get; set; }

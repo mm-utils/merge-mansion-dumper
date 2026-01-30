@@ -303,6 +303,10 @@ namespace GameLogic.Config.Map.Characters
         GrandmaRoomFirstMapCharacterPosition = 11199,
         GrandmaRoomEntryMapMaddie = 11200,
         GrandmaRoomCharacter = 11201,
-        AreaPetHomeMapKleptoBandit = 5810
+        AreaPetHomeMapKleptoBandit = 5810,
+        AreaPetHomeMapMcLeod = 5811,
+        WalkInClosetFirstMapCharacterPosition = 11799,
+        WalkInClosetEntryMapMaddie = 11800,
+        WalkInClosetCharacter = 11801
     }
 }

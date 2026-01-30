@@ -15,13 +15,14 @@ using GameLogic.Player.Rewards;
 using Metaplay.Core.Math;
 using Merge;
 using Code.GameLogic.IAP;
+using Metacore.MergeMansion.Common.Options;
 
 namespace Code.GameLogic.GameEvents
 {
     [MetaSerializable]
     [MetaActivableConfigData("LeaderboardEvent", false, true)]
     [MetaBlockedMembers(new int[] { 10, 16 })]
-    public class LeaderboardEventInfo : IMetaActivableConfigData<LeaderboardEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<LeaderboardEventId>, IHasGameConfigKey<LeaderboardEventId>, IMetaActivableInfo<LeaderboardEventId>, IBoardEventInfo, IHasRequirements, IBubbleBonusEvent, IEventSharedInfo
+    public class LeaderboardEventInfo : IMetaActivableConfigData<LeaderboardEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<LeaderboardEventId>, IHasGameConfigKey<LeaderboardEventId>, IMetaActivableInfo<LeaderboardEventId>, IBoardEventInfo, IHasRequirement, IBubbleBonusEvent, IEventSharedInfo
     {
         [MetaMember(1, (MetaMemberFlags)0)]
         public LeaderboardEventId LeaderboardEventId { get; set; }
@@ -151,6 +152,7 @@ namespace Code.GameLogic.GameEvents
         [MetaMember(7, (MetaMemberFlags)0)]
         [MetaOnMemberDeserializationFailure("FixRef")]
         public ItemDef PortalItemDef { get; set; }
-        public IEnumerable<PlayerRequirement> Requirements { get; }
+        public Option<EventGroupId> GroupIdOption { get; }
+        public PlayerRequirement Requirement { get; }
     }
 }

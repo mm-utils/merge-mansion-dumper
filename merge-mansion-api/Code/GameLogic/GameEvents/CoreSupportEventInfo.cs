@@ -15,7 +15,7 @@ namespace Code.GameLogic.GameEvents
     [MetaBlockedMembers(new int[] { 5 })]
     [MetaSerializable]
     [MetaActivableConfigData("CoreSupportEvent", false, true)]
-    public class CoreSupportEventInfo : IMetaActivableConfigData<CoreSupportEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<CoreSupportEventId>, IHasGameConfigKey<CoreSupportEventId>, IMetaActivableInfo<CoreSupportEventId>, IValidatable, ICoreSupportEventInfo, IEventSharedInfo, ILevelEventInfo, IHasRequirements
+    public class CoreSupportEventInfo : IMetaActivableConfigData<CoreSupportEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<CoreSupportEventId>, IHasGameConfigKey<CoreSupportEventId>, IMetaActivableInfo<CoreSupportEventId>, IValidatable, ICoreSupportEventInfo, IEventSharedInfo, ILevelEventInfo, IHasRequirement
     {
         [MetaMember(1, (MetaMemberFlags)0)]
         public CoreSupportEventId ConfigKey { get; set; }
@@ -86,7 +86,6 @@ namespace Code.GameLogic.GameEvents
         public string DisplayShortInfo { get; }
         public MetaActivableTimelineSettings Timeline { get; }
         public string SharedEventId { get; }
-        public EventGroupId GroupId { get; }
         public IStringId LevelEventId { get; }
         public List<int> ProgressionPopupHeaderImageLevels { get; }
         public Option<CoreSupportEventMinigameId> MinigameIdOption { get; }
@@ -129,6 +128,7 @@ namespace Code.GameLogic.GameEvents
         [MetaOnMemberDeserializationFailure("FixRef")]
         private ItemDef PortalItemDef { get; set; }
         public Option<CoreSupportEventTokenId> TokenIdOption { get; }
-        public IEnumerable<PlayerRequirement> Requirements { get; }
+        public Option<EventGroupId> GroupIdOption { get; }
+        public PlayerRequirement Requirement { get; }
     }
 }

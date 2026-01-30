@@ -12,6 +12,7 @@ namespace Game.Logic
 {
     [MetaSerializableDerived(10)]
     [MetaReservedMembers(0, 80)]
+    [MetaBlockedMembers(new int[] { 13 })]
     public class MergeMansionInGameMail : MergeMansionMailContents, IBroadcastMailMessage
     {
         private static int ShortTopicLimit;
@@ -92,8 +93,5 @@ namespace Game.Logic
             {
             }
         }
-
-        [MetaMember(13, (MetaMemberFlags)0)]
-        public string HelpshiftLink { get; set; }
     }
 }

@@ -20,6 +20,7 @@ using Code.GameLogic.DynamicEvents;
 using GameLogic.Hotspots.CardStack;
 using GameLogic.TaskLists;
 using Code.GameLogic.ProgressionTracks;
+using Code.GameLogic.Ads;
 
 namespace Game.Logic
 {

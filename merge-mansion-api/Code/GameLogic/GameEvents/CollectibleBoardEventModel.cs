@@ -8,6 +8,8 @@ using System.Runtime.Serialization;
 using GameLogic.Player.Rewards;
 using Metaplay.Core;
 using Metaplay.Core.Offers;
+using Code.GameLogic.ProgressionTracks;
+using Metacore.MergeMansion.Common.Options;
 
 namespace Code.GameLogic.GameEvents
 {
@@ -97,7 +99,6 @@ namespace Code.GameLogic.GameEvents
         [MetaMember(14, (MetaMemberFlags)0)]
         protected HashSet<int> FishCatchPopupSeenItems { get; set; }
         public IStringId Id { get; }
-        public int Points { get; }
 
         [IgnoreDataMember]
         OfferPlacementId Code.GameLogic.GameEvents.IBoardEventModel.BoardShopPlacementId { get; }
@@ -126,5 +127,9 @@ namespace Code.GameLogic.GameEvents
 
         [IgnoreDataMember]
         public int SelectedPortalItem { get; }
+
+        [MetaMember(25, (MetaMemberFlags)0)]
+        private ProgressionTrackId EventProgressionTrackId { get; set; }
+        public Option<ProgressionTrackId> EventProgressionTrackIdOption { get; }
     }
 }

@@ -7,12 +7,13 @@ using Metaplay.Core;
 using GameLogic.Player.Requirements;
 using Code.GameLogic.GameEvents;
 using Code.GameLogic.Config;
+using Metacore.MergeMansion.Common.Options;
 
 namespace GameLogic.Config.DecorationShop
 {
     [MetaSerializable]
     [MetaActivableConfigData("DecorationShop", false, true)]
-    public class DecorationShopInfo : IMetaActivableConfigData<DecorationShopId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<DecorationShopId>, IHasGameConfigKey<DecorationShopId>, IMetaActivableInfo<DecorationShopId>, IEventSharedInfo, IValidatable, IHasRequirements
+    public class DecorationShopInfo : IMetaActivableConfigData<DecorationShopId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<DecorationShopId>, IHasGameConfigKey<DecorationShopId>, IMetaActivableInfo<DecorationShopId>, IEventSharedInfo, IValidatable, IHasRequirement
     {
         [MetaMember(1, (MetaMemberFlags)0)]
         public DecorationShopId ConfigKey { get; set; }
@@ -64,6 +65,8 @@ namespace GameLogic.Config.DecorationShop
         {
         }
 
-        IEnumerable<PlayerRequirement> GameLogic.Player.Requirements.IHasRequirements.Requirements { get; }
+        public Option<EventGroupId> GroupIdOption { get; }
+
+        PlayerRequirement GameLogic.Player.Requirements.IHasRequirement.Requirement { get; }
     }
 }

@@ -59,7 +59,7 @@ namespace GameLogic.Player.Board
         [MetaMember(1, (MetaMemberFlags)0)]
         private List<MergeItem> BoardItems { get; set; }
 
-        [MetaMember(2, (MetaMemberFlags)0)]
+        [IgnoreDataMember]
         public MetaTime BoardCreationTime { get; set; }
 
         [MetaMember(3, (MetaMemberFlags)0)]

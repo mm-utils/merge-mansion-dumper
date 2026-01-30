@@ -9,12 +9,13 @@ using GameLogic.Story;
 using Metaplay.Core.Offers;
 using System.Runtime.Serialization;
 using Metaplay.Core.Schedule;
+using Metacore.MergeMansion.Common.Options;
 
 namespace Code.GameLogic.GameEvents
 {
     [MetaSerializable]
     [MetaActivableConfigData("AdStampCardEvent", false, true)]
-    public class AdStampCardEventInfo : ICoreSupportingEventInfo<AdStampCardEventId>, IMetaActivableConfigData<AdStampCardEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<AdStampCardEventId>, IHasGameConfigKey<AdStampCardEventId>, IMetaActivableInfo<AdStampCardEventId>, IHasRequirements, ICoreSupportingEventInfo, IEventSharedInfo, IOfferPlacementSupporting
+    public class AdStampCardEventInfo : ICoreSupportingEventInfo<AdStampCardEventId>, IMetaActivableConfigData<AdStampCardEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<AdStampCardEventId>, IHasGameConfigKey<AdStampCardEventId>, IMetaActivableInfo<AdStampCardEventId>, IHasRequirement, ICoreSupportingEventInfo, IEventSharedInfo, IOfferPlacementSupporting
     {
         [MetaMember(5, (MetaMemberFlags)0)]
         public List<PlayerReward> DailyRewards;
@@ -79,6 +80,7 @@ namespace Code.GameLogic.GameEvents
         }
 
         public OfferPlacementId OfferPlacementId { get; }
-        public IEnumerable<PlayerRequirement> Requirements { get; }
+        public Option<EventGroupId> GroupIdOption { get; }
+        public PlayerRequirement Requirement { get; }
     }
 }

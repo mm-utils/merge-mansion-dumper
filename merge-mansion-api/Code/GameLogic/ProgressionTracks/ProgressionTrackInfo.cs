@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Metaplay.Core;
 using GameLogic.Player.Rewards;
 using System;
+using Metaplay.Core.Player;
 
 namespace Code.GameLogic.ProgressionTracks
 {
@@ -33,5 +34,8 @@ namespace Code.GameLogic.ProgressionTracks
         public List<string> Args { get; set; }
         public ProgressionTrackId ConfigKey => TrackId;
         public IStringId LevelEventId { get; }
+
+        [MetaMember(8, (MetaMemberFlags)0)]
+        public List<PlayerSegmentId> Segments { get; set; }
     }
 }

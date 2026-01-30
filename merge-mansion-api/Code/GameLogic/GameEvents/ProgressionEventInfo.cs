@@ -14,6 +14,7 @@ using Metaplay.Core.Math;
 using Code.GameLogic.Config;
 using GameLogic.Cutscenes;
 using Code.GameLogic.IAP;
+using Metacore.MergeMansion.Common.Options;
 
 namespace Code.GameLogic.GameEvents
 {
@@ -23,7 +24,7 @@ namespace Code.GameLogic.GameEvents
     [MetaBlockedMembers(new int[] { 7, 8 })]
     [MetaBlockedMembers(new int[] { 14, 15, 16, 17, 18, 30 })]
     [MetaBlockedMembers(new int[] { 11, 20, 24, 25, 26, 27, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48 })]
-    public class ProgressionEventInfo : IMetaActivableConfigData<ProgressionEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<ProgressionEventId>, IHasGameConfigKey<ProgressionEventId>, IMetaActivableInfo<ProgressionEventId>, IValidatable, IBubbleBonusEvent, IEventSharedInfo, IHasRequirements
+    public class ProgressionEventInfo : IMetaActivableConfigData<ProgressionEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<ProgressionEventId>, IHasGameConfigKey<ProgressionEventId>, IMetaActivableInfo<ProgressionEventId>, IValidatable, IBubbleBonusEvent, IEventSharedInfo, IHasRequirement
     {
         [MetaMember(1, (MetaMemberFlags)0)]
         public ProgressionEventId ProgressionEventId { get; set; }
@@ -228,6 +229,7 @@ namespace Code.GameLogic.GameEvents
         {
         }
 
-        public IEnumerable<PlayerRequirement> Requirements { get; }
+        public Option<EventGroupId> GroupIdOption { get; }
+        public PlayerRequirement Requirement { get; }
     }
 }

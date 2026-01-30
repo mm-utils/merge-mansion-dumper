@@ -8,13 +8,14 @@ using GameLogic.Player.Requirements;
 using Code.GameLogic.GameEvents;
 using System.Collections.Generic;
 using Code.GameLogic.Config;
+using Metacore.MergeMansion.Common.Options;
 
 namespace GameLogic.Config.EnergyModeEvent
 {
     [MetaSerializable]
     [MetaBlockedMembers(new int[] { 4 })]
     [MetaActivableConfigData("EnergyModeEvent", false, true)]
-    public class EnergyModeEventInfo : IMetaActivableConfigData<EnergyModeEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<EnergyModeEventId>, IHasGameConfigKey<EnergyModeEventId>, IMetaActivableInfo<EnergyModeEventId>, IEventSharedInfo, IValidatable, IHasRequirements
+    public class EnergyModeEventInfo : IMetaActivableConfigData<EnergyModeEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<EnergyModeEventId>, IHasGameConfigKey<EnergyModeEventId>, IMetaActivableInfo<EnergyModeEventId>, IEventSharedInfo, IValidatable, IHasRequirement
     {
         [MetaMember(1, (MetaMemberFlags)0)]
         public EnergyModeEventId ConfigKey { get; set; }
@@ -84,6 +85,8 @@ namespace GameLogic.Config.EnergyModeEvent
         {
         }
 
-        IEnumerable<PlayerRequirement> GameLogic.Player.Requirements.IHasRequirements.Requirements { get; }
+        public Option<EventGroupId> GroupIdOption { get; }
+
+        PlayerRequirement GameLogic.Player.Requirements.IHasRequirement.Requirement { get; }
     }
 }

@@ -46,7 +46,6 @@ namespace Code.GameLogic.GameEvents
         public OfferPlacementId BoardShopFlashPlacementId { get; }
         public bool PortalItemGiven { get; }
         public IStringId Id { get; }
-        public int Points { get; }
 
         public ShortLeaderboardEventModel()
         {

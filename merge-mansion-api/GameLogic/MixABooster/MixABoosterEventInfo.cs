@@ -8,12 +8,13 @@ using GameLogic.Player.Requirements;
 using Metaplay.Core.Offers;
 using System.Collections.Generic;
 using Metaplay.Core;
+using Metacore.MergeMansion.Common.Options;
 
 namespace GameLogic.MixABooster
 {
     [MetaSerializable]
     [MetaActivableConfigData("MixABoosterEvent", false, true)]
-    public class MixABoosterEventInfo : ICoreSupportingEventInfo<MixABoosterEventId>, IMetaActivableConfigData<MixABoosterEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<MixABoosterEventId>, IHasGameConfigKey<MixABoosterEventId>, IMetaActivableInfo<MixABoosterEventId>, IHasRequirements, ICoreSupportingEventInfo, IEventSharedInfo, IValidatable, IOfferPlacementSupporting
+    public class MixABoosterEventInfo : ICoreSupportingEventInfo<MixABoosterEventId>, IMetaActivableConfigData<MixABoosterEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<MixABoosterEventId>, IHasGameConfigKey<MixABoosterEventId>, IMetaActivableInfo<MixABoosterEventId>, IHasRequirement, ICoreSupportingEventInfo, IEventSharedInfo, IValidatable, IOfferPlacementSupporting
     {
         [MetaMember(1, (MetaMemberFlags)0)]
         public MixABoosterEventId ConfigKey { get; set; }
@@ -56,7 +57,6 @@ namespace GameLogic.MixABooster
 
         [MetaMember(9, (MetaMemberFlags)0)]
         public EventCategoryInfo CategoryInfo { get; set; }
-        public EventGroupId GroupId { get; }
         public int Priority { get; }
         public string SharedEventId { get; }
 
@@ -65,7 +65,8 @@ namespace GameLogic.MixABooster
         }
 
         public OfferPlacementId OfferPlacementId { get; }
+        public Option<EventGroupId> GroupIdOption { get; }
 
-        IEnumerable<PlayerRequirement> GameLogic.Player.Requirements.IHasRequirements.Requirements { get; }
+        PlayerRequirement GameLogic.Player.Requirements.IHasRequirement.Requirement { get; }
     }
 }

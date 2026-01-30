@@ -14,7 +14,7 @@ using GameLogic.TaskLists;
 namespace GameLogic.Area
 {
     [MetaSerializable]
-    public class AreaInfo : IGameConfigData<AreaId>, IGameConfigData, IHasGameConfigKey<AreaId>
+    public class AreaInfo : IGameConfigData<AreaId>, IGameConfigData, IHasGameConfigKey<AreaId>, IAreaInfo
     {
         [MetaMember(1, (MetaMemberFlags)0)]
         public AreaId AreaId { get; set; }
@@ -145,5 +145,8 @@ namespace GameLogic.Area
 
         [MetaMember(23, (MetaMemberFlags)0)]
         public AreaCompleteRewardStyle CompleteRewardStyle { get; set; }
+
+        [MetaMember(24, (MetaMemberFlags)0)]
+        public bool IsTaskGroupV2StartPopupEnabled { get; set; }
     }
 }

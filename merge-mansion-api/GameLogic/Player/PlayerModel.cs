@@ -56,7 +56,7 @@ namespace GameLogic.Player
     [MetaReservedMembers(99, 400)]
     [MetaReservedMembers(11, 12)]
     [MetaBlockedMembers(new int[] { 6, 108, 110, 112, 114, 116, 117, 200, 205, 208, 220, 224, 239, 241, 251, 233, 274, 285, 249, 216, 299, 309 })]
-    [SupportedSchemaVersions(21, 55)]
+    [SupportedSchemaVersions(21, 56)]
     public class PlayerModel : PlayerModelBase<PlayerModel, PlayerStatisticsCore, PlayerMergeMansionOffersGroupModel, PlayerGuildStateCore>, IWritablePlayer, IPlayer, IGenerationContext
     {
         public static int MaxLoginCounts;
@@ -549,5 +549,7 @@ namespace GameLogic.Player
         public IEnumerable<MixABoosterEventModel> ActiveMixABoosterEvents { get; }
 
         private bool _modelEventsRegistered;
+        [IgnoreDataMember]
+        MetaTime GameLogic.Player.IPlayer.CurrentTime { get; }
     }
 }

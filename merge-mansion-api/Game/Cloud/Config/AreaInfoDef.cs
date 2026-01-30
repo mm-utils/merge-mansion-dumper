@@ -4,8 +4,8 @@ using GameLogic.Config;
 
 namespace Game.Cloud.Config
 {
-    [MetaSerializableDerived(1)]
-    public class AreaInfoDef : ConfigDefinition<AreaId, AreaInfo>
+    [MetaSerializableDerived(5)]
+    public class AreaInfoDef : ConfigDefinition<AreaId, IAreaInfo>
     {
         public AreaInfoDef(AreaId key)
         {

@@ -94,8 +94,6 @@ namespace Code.GameLogic.GameEvents
         public bool Resolved { get; set; }
         public IStringId Id { get; }
 
-        int IPointsEvent.Points { get; }
-
         [MetaMember(27, (MetaMemberFlags)0)]
         public List<DynamicEventTaskState> DynamicEventTasks { get; set; }
 

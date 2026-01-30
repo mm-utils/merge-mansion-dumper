@@ -38,6 +38,7 @@ namespace Code.GameLogic.GameEvents
         public string AlgorithmLogContent { get; set; }
 
         [MetaMember(8, (MetaMemberFlags)0)]
+        [Obsolete("Keeping for migration, can be removed in summer 2026")]
         private Queue<CardCollectionCardId> UnusedInformantTips { get; set; }
 
         [MetaMember(9, (MetaMemberFlags)0)]

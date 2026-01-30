@@ -14,7 +14,7 @@ using GameLogic.Player;
 namespace GameLogic.Config
 {
     [MetaSerializable]
-    [MetaBlockedMembers(new int[] { 1, 2, 3, 5, 31, 32, 37, 44, 48, 61, 16, 17, 40, 41, 54, 55, 56, 63, 64, 65 })]
+    [MetaBlockedMembers(new int[] { 1, 2, 3, 5, 31, 32, 37, 44, 48, 61, 16, 17, 40, 41, 54, 55, 56, 63, 64, 65, 82 })]
     public class SharedGlobals : GameConfigKeyValue<SharedGlobals>, IValidatable
     {
         [MetaMember(4, (MetaMemberFlags)0)]
@@ -204,10 +204,10 @@ namespace GameLogic.Config
         [MetaMember(81, (MetaMemberFlags)0)]
         public bool UseUITracking { get; set; }
 
-        [MetaMember(82, (MetaMemberFlags)0)]
-        public bool FallbackToHelpshift { get; set; }
-
         [MetaMember(83, (MetaMemberFlags)0)]
         public LocationId InitialLocation { get; set; }
+
+        [MetaMember(84, (MetaMemberFlags)0)]
+        public bool UseStreamlinedStoryEventFlow { get; set; }
     }
 }

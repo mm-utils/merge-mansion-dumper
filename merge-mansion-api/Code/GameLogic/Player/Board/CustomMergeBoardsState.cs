@@ -8,6 +8,6 @@ namespace Code.GameLogic.Player.Board
     [MetaSerializable]
     public class CustomMergeBoardsState : ICustomMergeBoardsState, IWritableCustomMergeBoardsState
     {
-        public SortedDictionary<MergeBoardId, MergeBoard> MergeBoards { get; set; }
+        public Dictionary<MergeBoardId, MergeBoard> MergeBoards { get; set; }
     }
 }

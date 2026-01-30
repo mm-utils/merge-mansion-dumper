@@ -77,7 +77,6 @@ namespace Code.GameLogic.GameEvents
         [IgnoreDataMember]
         public LeaderboardEventInfo Info { get; }
         public IStringId Id { get; }
-        public int Points { get; }
 
         [IgnoreDataMember]
         OfferPlacementId Code.GameLogic.GameEvents.IBoardEventModel.BoardShopPlacementId { get; }

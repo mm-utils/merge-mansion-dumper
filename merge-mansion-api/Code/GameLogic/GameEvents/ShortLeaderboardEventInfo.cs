@@ -13,12 +13,13 @@ using GameLogic.Decorations;
 using Merge;
 using GameLogic.Config;
 using Code.GameLogic.IAP;
+using Metacore.MergeMansion.Common.Options;
 
 namespace Code.GameLogic.GameEvents
 {
     [MetaSerializable]
     [MetaActivableConfigData("ShortLeaderboardEvent", false, true)]
-    public class ShortLeaderboardEventInfo : IMetaActivableConfigData<ShortLeaderboardEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<ShortLeaderboardEventId>, IHasGameConfigKey<ShortLeaderboardEventId>, IMetaActivableInfo<ShortLeaderboardEventId>, IBoardEventInfo, IHasRequirements, IEventSharedInfo, IBubbleBonusEvent, IValidatable
+    public class ShortLeaderboardEventInfo : IMetaActivableConfigData<ShortLeaderboardEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<ShortLeaderboardEventId>, IHasGameConfigKey<ShortLeaderboardEventId>, IMetaActivableInfo<ShortLeaderboardEventId>, IBoardEventInfo, IHasRequirement, IEventSharedInfo, IBubbleBonusEvent, IValidatable
     {
         [MetaMember(1, (MetaMemberFlags)0)]
         public ShortLeaderboardEventId ConfigKey { get; set; }
@@ -93,6 +94,7 @@ namespace Code.GameLogic.GameEvents
         {
         }
 
-        public IEnumerable<PlayerRequirement> Requirements { get; }
+        public Option<EventGroupId> GroupIdOption { get; }
+        public PlayerRequirement Requirement { get; }
     }
 }

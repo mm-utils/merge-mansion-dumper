@@ -230,6 +230,8 @@ namespace GameLogic.Player
         ICustomMergeBoardsState CustomMergeBoardsState { get; }
 
         LocationId StartLocation { get; }
+
+        MergeBoard GarageMergeBoard { get; }
     // Slot: 50
     //void AddScriptedEvent(IScriptedEventCondition condition, ISerializedAction action);
     }

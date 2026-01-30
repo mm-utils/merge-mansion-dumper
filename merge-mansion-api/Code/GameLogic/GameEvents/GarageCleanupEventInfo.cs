@@ -8,13 +8,14 @@ using Metaplay.Core;
 using Merge;
 using GameLogic.Player.Requirements;
 using System.Runtime.Serialization;
+using Metacore.MergeMansion.Common.Options;
 
 namespace Code.GameLogic.GameEvents
 {
     [MetaSerializable]
     [MetaBlockedMembers(new int[] { 10, 11, 12, 13, 15, 16 })]
     [MetaActivableConfigData("GarageCleanupEvent", false, true)]
-    public class GarageCleanupEventInfo : IMetaActivableConfigData<GarageCleanupEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<GarageCleanupEventId>, IHasGameConfigKey<GarageCleanupEventId>, IMetaActivableInfo<GarageCleanupEventId>, IValidatable, IEventSharedInfo, IHasRequirements
+    public class GarageCleanupEventInfo : IMetaActivableConfigData<GarageCleanupEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<GarageCleanupEventId>, IHasGameConfigKey<GarageCleanupEventId>, IMetaActivableInfo<GarageCleanupEventId>, IValidatable, IEventSharedInfo, IHasRequirement
     {
         public static GarageCleanupEventInfo.BoardSizeInfo BoardSize;
         [MetaMember(1, (MetaMemberFlags)0)]
@@ -107,6 +108,7 @@ namespace Code.GameLogic.GameEvents
         {
         }
 
-        public IEnumerable<PlayerRequirement> Requirements { get; }
+        public Option<EventGroupId> GroupIdOption { get; }
+        public PlayerRequirement Requirement { get; }
     }
 }

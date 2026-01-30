@@ -21,6 +21,7 @@ namespace GameLogic.Player.Rewards
         public bool FromSupport { get; set; }
 
         [MetaMember(4, (MetaMemberFlags)0)]
+        [MetaValidateRequired]
         public MergeBoardId MergeBoardId { get; set; }
 
         [MetaFormNotEditable]
@@ -68,8 +69,9 @@ namespace GameLogic.Player.Rewards
         [IgnoreDataMember]
         public override bool ShouldShowInfoButton { get; }
 
-        [ValidateItemDefMetaMember]
         [MetaMember(1, (MetaMemberFlags)0)]
+        [MetaValidateRequired]
+        [ValidateItemDefMetaMember]
         [MetaOnMemberDeserializationFailure("FixItemRef")]
         public ItemDef ItemDef { get; set; }
     }

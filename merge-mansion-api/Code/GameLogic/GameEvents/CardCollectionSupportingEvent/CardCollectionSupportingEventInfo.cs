@@ -6,12 +6,13 @@ using GameLogic.Player.Requirements;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Code.GameLogic.Config;
+using Metacore.MergeMansion.Common.Options;
 
 namespace Code.GameLogic.GameEvents.CardCollectionSupportingEvent
 {
     [MetaSerializable]
     [MetaActivableConfigData("CardCollectionSupportingEvent", false, true)]
-    public class CardCollectionSupportingEventInfo : IMetaActivableConfigData<CardCollectionSupportingEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<CardCollectionSupportingEventId>, IHasGameConfigKey<CardCollectionSupportingEventId>, IMetaActivableInfo<CardCollectionSupportingEventId>, IEventSharedInfo, IValidatable, IHasRequirements
+    public class CardCollectionSupportingEventInfo : IMetaActivableConfigData<CardCollectionSupportingEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<CardCollectionSupportingEventId>, IHasGameConfigKey<CardCollectionSupportingEventId>, IMetaActivableInfo<CardCollectionSupportingEventId>, IEventSharedInfo, IValidatable, IHasRequirement
     {
         [MetaMember(1, (MetaMemberFlags)0)]
         public CardCollectionSupportingEventId ConfigKey { get; set; }
@@ -68,6 +69,7 @@ namespace Code.GameLogic.GameEvents.CardCollectionSupportingEvent
         {
         }
 
-        public IEnumerable<PlayerRequirement> Requirements { get; }
+        public Option<EventGroupId> GroupIdOption { get; }
+        public PlayerRequirement Requirement { get; }
     }
 }

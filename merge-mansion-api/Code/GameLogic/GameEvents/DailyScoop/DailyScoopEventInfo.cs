@@ -9,12 +9,13 @@ using Metaplay.Core.Player;
 using System.Runtime.Serialization;
 using Metaplay.Core.Schedule;
 using GameLogic.Config;
+using Metacore.MergeMansion.Common.Options;
 
 namespace Code.GameLogic.GameEvents.DailyScoop
 {
     [MetaSerializable]
     [MetaActivableConfigData("DailyScoopEvent", false, true)]
-    public class DailyScoopEventInfo : ICoreSupportingEventInfo<DailyScoopEventId>, IMetaActivableConfigData<DailyScoopEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<DailyScoopEventId>, IHasGameConfigKey<DailyScoopEventId>, IMetaActivableInfo<DailyScoopEventId>, IHasRequirements, ICoreSupportingEventInfo, IEventSharedInfo
+    public class DailyScoopEventInfo : ICoreSupportingEventInfo<DailyScoopEventId>, IMetaActivableConfigData<DailyScoopEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<DailyScoopEventId>, IHasGameConfigKey<DailyScoopEventId>, IMetaActivableInfo<DailyScoopEventId>, IHasRequirement, ICoreSupportingEventInfo, IEventSharedInfo
     {
         [MetaMember(1, (MetaMemberFlags)0)]
         public DailyScoopEventId ConfigKey { get; set; }
@@ -73,6 +74,7 @@ namespace Code.GameLogic.GameEvents.DailyScoop
         public CoreSupportingEventType CoreSupportingEventType { get; }
         public string CoreSupportingEventDisplayName { get; }
         public string CoreSupportingEventConfigKey { get; }
-        public IEnumerable<PlayerRequirement> Requirements { get; }
+        public Option<EventGroupId> GroupIdOption { get; }
+        public PlayerRequirement Requirement { get; }
     }
 }

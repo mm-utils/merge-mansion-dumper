@@ -6,12 +6,13 @@ using System;
 using System.Collections.Generic;
 using GameLogic.Player.Requirements;
 using Code.GameLogic.GameEvents;
+using Metacore.MergeMansion.Common.Options;
 
 namespace GameLogic.MiniEvents
 {
     [MetaSerializable]
     [MetaActivableConfigData("MiniEvent", false, true)]
-    public class MiniEventInfo : IMetaActivableConfigData<MiniEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<MiniEventId>, IHasGameConfigKey<MiniEventId>, IMetaActivableInfo<MiniEventId>, IValidatable, IEventSharedInfo, IHasRequirements
+    public class MiniEventInfo : IMetaActivableConfigData<MiniEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<MiniEventId>, IHasGameConfigKey<MiniEventId>, IMetaActivableInfo<MiniEventId>, IValidatable, IEventSharedInfo, IHasRequirement
     {
         [MetaMember(1, (MetaMemberFlags)0)]
         public MiniEventId MiniEventId { get; set; }
@@ -76,6 +77,8 @@ namespace GameLogic.MiniEvents
         {
         }
 
-        IEnumerable<PlayerRequirement> GameLogic.Player.Requirements.IHasRequirements.Requirements { get; }
+        public Option<EventGroupId> GroupIdOption { get; }
+
+        PlayerRequirement GameLogic.Player.Requirements.IHasRequirement.Requirement { get; }
     }
 }

@@ -19,6 +19,7 @@ using GameLogic.Cutscenes;
 using GameLogic.MergeChains;
 using Code.GameLogic.IAP;
 using Metacore.MergeMansion.Common.Options;
+using Code.GameLogic.ProgressionTracks;
 
 namespace Code.GameLogic.GameEvents
 {
@@ -26,7 +27,7 @@ namespace Code.GameLogic.GameEvents
     [MetaSerializable]
     [MetaActivableConfigData("CollectibleBoardEvent", false, true)]
     [MetaBlockedMembers(new int[] { 6, 7, 13, 24, 27 })]
-    public class CollectibleBoardEventInfo : IMetaActivableConfigData<CollectibleBoardEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<CollectibleBoardEventId>, IHasGameConfigKey<CollectibleBoardEventId>, IMetaActivableInfo<CollectibleBoardEventId>, ILevelBoardEventInfo, ILevelEventInfo, IBoardEventInfo, IHasRequirements, IBubbleBonusEvent, IEventSharedInfo
+    public class CollectibleBoardEventInfo : IMetaActivableConfigData<CollectibleBoardEventId>, IMetaActivableConfigData, IGameConfigData, IMetaActivableInfo, IGameConfigData<CollectibleBoardEventId>, IHasGameConfigKey<CollectibleBoardEventId>, IMetaActivableInfo<CollectibleBoardEventId>, ILevelBoardEventInfo, ILevelEventInfo, IBoardEventInfo, IHasRequirement, IBubbleBonusEvent, IEventSharedInfo
     {
         [MetaMember(1, (MetaMemberFlags)0)]
         public CollectibleBoardEventId CollectibleBoardEventId { get; set; }
@@ -233,6 +234,10 @@ namespace Code.GameLogic.GameEvents
         [MetaOnMemberDeserializationFailure("FixRefList")]
         public List<ItemDef> PortalItemDefs { get; set; }
         public Option<List<ItemDef>> PortalItemRefsOption { get; }
-        public IEnumerable<PlayerRequirement> Requirements { get; }
+
+        [MetaMember(45, (MetaMemberFlags)0)]
+        public List<ProgressionTrackId> EventProgressionTracks { get; set; }
+        public Option<EventGroupId> GroupIdOption { get; }
+        public PlayerRequirement Requirement { get; }
     }
 }

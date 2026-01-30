@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using Metaplay.Core;
 using Code.GameLogic.GameEvents;
+using Metaplay.Core.Player;
 
 namespace Code.GameLogic.ProgressionTracks
 {
@@ -16,5 +17,7 @@ namespace Code.GameLogic.ProgressionTracks
         public string FinalRewards { get; set; }
         public List<string> Args { get; set; }
         public List<MetaRef<EventLevelInfo>> Levels { get; set; }
+        public List<PlayerSegmentId> Segments { get; set; }
+        public List<MetaRef<EventLevelInfo>> RecurringLevels { get; set; }
     }
 }

@@ -74,52 +74,73 @@ namespace GameLogic.Player.Items
         public class MergeItemExtra
         {
             [MetaMember(1, (MetaMemberFlags)0)]
+            [MetaSerializerOmitNull]
             public DecayState DecayState; // 0x10
             [MetaMember(2, (MetaMemberFlags)0)]
+            [MetaSerializerOmitNull]
             public ActivationState ActivationState; // 0x18
             [MetaMember(4, (MetaMemberFlags)0)]
+            [MetaSerializerOmitNull]
             public StorageState ActivationStorageState; // 0x28
             [MetaMember(3, (MetaMemberFlags)0)]
+            [MetaSerializerOmitNull]
             public SpawnState SpawnState;
             [MetaMember(5, (MetaMemberFlags)0)]
+            [MetaSerializerOmitNull]
             public StorageState SpawnStorageState;
             [MetaMember(6, (MetaMemberFlags)0)]
+            [MetaSerializerOmitNull]
             public ChestState ChestState;
             [MetaMember(7, (MetaMemberFlags)0)]
+            [MetaSerializerOmitNull]
             public BoosterState BoosterState;
             [MetaMember(8, (MetaMemberFlags)0)]
+            [MetaSerializerOmitNull]
             public BubbleState BubbleState;
             [MetaMember(9, (MetaMemberFlags)0)]
             public int SpecialActivationAmount;
             [MetaMember(10, (MetaMemberFlags)0)]
+            [MetaSerializerOmitNull]
             public ISinkState SinkState;
             [MetaMember(12, (MetaMemberFlags)0)]
+            [MetaSerializerOmitNull]
             public TimeContainerState TimeContainerState;
             [MetaMember(13, (MetaMemberFlags)0)]
+            [MetaSerializerOmitNull]
             public ChargesState ChargeState;
             [MetaMember(14, (MetaMemberFlags)0)]
+            [MetaSerializerOmitNull]
             public XpState ExperienceState;
             [MetaMember(15, (MetaMemberFlags)0)]
+            [MetaSerializerOmitNull]
             public ItemAttachmentsState AttachmentsState;
             [MetaMember(16, (MetaMemberFlags)0)]
+            [MetaSerializerOmitNull]
             public ItemLeaderboardState LeaderboardState;
             [MetaMember(17, (MetaMemberFlags)0)]
+            [MetaSerializerOmitNull]
             public ItemRewardsState RewardsState;
             public MergeItemExtra()
             {
             }
 
             [MetaMember(18, (MetaMemberFlags)0)]
+            [MetaSerializerOmitNull]
             public FishingRodState FishingRodState;
             [MetaMember(19, (MetaMemberFlags)0)]
+            [MetaSerializerOmitNull]
             public WeightState WeightState;
             [MetaMember(20, (MetaMemberFlags)0)]
+            [MetaSerializerOmitNull]
             public PersistentState PersistentState;
             [MetaMember(21, (MetaMemberFlags)0)]
+            [MetaSerializerOmitNull]
             public OrderParentState OrderState;
             [MetaMember(22, (MetaMemberFlags)0)]
+            [MetaSerializerOmitNull]
             public RockChunkState RockChunkState;
             [MetaMember(23, (MetaMemberFlags)0)]
+            [MetaSerializerOmitNull]
             public GemState GemState;
         }
 
