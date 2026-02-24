@@ -68,7 +68,8 @@ namespace Code.GameLogic.GameEvents
 
         [MetaMember(16, (MetaMemberFlags)0)]
         public PlayerRequirement PreviewRequirement { get; set; }
-        public ShortLeaderboardEventId ActivableId { get; }
+
+        public ShortLeaderboardEventId ActivableId => ConfigKey;
         public string DisplayShortInfo { get; }
         public MetaActivableTimelineSettings Timeline { get; }
         public IStringId BoardEventId { get; }

@@ -8,7 +8,7 @@ using Metacore.MergeMansion.Common.Options;
 namespace Code.GameLogic.Player
 {
     [MetaSerializable]
-    [MetaBlockedMembers(new int[] { 1 })]
+    [MetaBlockedMembers(new int[] { 1, 6 })]
     public class LastNSegmentsCache : ILastNSegmentsCache, IWritableLastNSegmentsCache
     {
         [MetaMember(2, (MetaMemberFlags)0)]
@@ -23,10 +23,10 @@ namespace Code.GameLogic.Player
         [IgnoreDataMember]
         public IDictionary<int, F64> AverageTransactionValueByLastNDays { get; set; }
 
-        [MetaMember(6, (MetaMemberFlags)0)]
-        public F64? HighestTransactionPriceLast30Days { get; set; }
+        [IgnoreDataMember]
+        public IDictionary<int, F64> HighestTransactionPriceByLastNDays { get; set; }
 
         [IgnoreDataMember]
-        public Option<F64> HighestTransactionPriceLast30DaysOption { get; }
+        public IDictionary<int, int> TotalTransactionsByLastNDays { get; set; }
     }
 }

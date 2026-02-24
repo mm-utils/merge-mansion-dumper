@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace Metaplay.Core.Guild
 {
-    public class GuildInviteCodeConverter : JsonConverter
+    internal class GuildInviteCodeConverter : JsonConverter
     {
         public GuildInviteCodeConverter()
         {

@@ -37,6 +37,7 @@ namespace GameLogic.Player.Rewards
         ItemForCollectibleBoardEvent = 28,
         Empty = 29,
         OnFire = 30,
-        StartingValues = 31
+        StartingValues = 31,
+        CoreSupportEventToken = 31
     }
 }

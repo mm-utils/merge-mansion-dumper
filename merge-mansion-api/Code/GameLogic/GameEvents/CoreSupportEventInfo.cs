@@ -9,6 +9,7 @@ using GameLogic.Player.Items;
 using System.Collections.Generic;
 using Metacore.MergeMansion.Common.Options;
 using GameLogic.Config;
+using Metaplay.Core.Schedule;
 
 namespace Code.GameLogic.GameEvents
 {
@@ -130,5 +131,6 @@ namespace Code.GameLogic.GameEvents
         public Option<CoreSupportEventTokenId> TokenIdOption { get; }
         public Option<EventGroupId> GroupIdOption { get; }
         public PlayerRequirement Requirement { get; }
+        public MetaRecurringCalendarSchedule Schedule { get; }
     }
 }

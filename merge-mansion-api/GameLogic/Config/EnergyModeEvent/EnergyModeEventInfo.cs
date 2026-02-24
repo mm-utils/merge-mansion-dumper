@@ -34,7 +34,8 @@ namespace GameLogic.Config.EnergyModeEvent
 
         [MetaMember(7, (MetaMemberFlags)0)]
         public string NameLocId { get; set; }
-        public EnergyModeEventId ActivableId { get; }
+
+        public EnergyModeEventId ActivableId => ConfigKey;
         public string DisplayShortInfo { get; }
         public MetaActivableTimelineSettings Timeline { get; }
 

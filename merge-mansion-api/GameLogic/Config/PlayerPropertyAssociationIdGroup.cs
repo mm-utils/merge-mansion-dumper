@@ -12,5 +12,8 @@ namespace GameLogic.Config
         public PlayerPropertyAssociationIdGroup()
         {
         }
+
+        [MetaMember(1, (MetaMemberFlags)0)]
+        private int Count { get; set; }
     }
 }

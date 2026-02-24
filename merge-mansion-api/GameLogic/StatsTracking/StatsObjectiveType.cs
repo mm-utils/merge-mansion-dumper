@@ -12,6 +12,19 @@ namespace GameLogic.StatsTracking
         CollectResource = 5,
         ClaimFromShop = 6,
         CompleteTasks = 7,
-        OpenChests = 8
+        OpenChests = 8,
+        Invalid = 0,
+        UseItems = 9,
+        UseItemsFromChain = 10,
+        EarnMysteryPassPoints = 11,
+        CompleteNDailyTrades = 12,
+        CompleteAllDailyTrades = 13,
+        SpendCoreSupportEventToken = 14,
+        EarnCoreSupportEventToken = 15,
+        BuyFlashSales = 16,
+        CompleteNCoreSupportEventMilestone = 17,
+        CompleteNCollectibleBoardEventMilestone = 18,
+        EarnBoultonLeagueEventPoints = 19,
+        CollectCardPacksObjective = 20
     }
 }

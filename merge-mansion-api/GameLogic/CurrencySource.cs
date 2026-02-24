@@ -104,6 +104,12 @@ namespace GameLogic
         RollTheDiceDuplicateRefund = 95,
         MailItemMissing = 96,
         WildItem = 97,
-        FTUEReset = 98
+        FTUEReset = 98,
+        BuilderEventBuildMilestoneCompleted = 99,
+        BuilderEventWheelSpinReward = 100,
+        BuilderEventBuildToolUsageReward = 101,
+        BuilderEventTimedReward = 102,
+        BuilderEventEndReward = 103,
+        DailyChallenges = 104
     }
 }

@@ -162,6 +162,7 @@ namespace Metaplay.Core.Player
         [PrettyPrint((PrettyPrintFlag)16)]
         [MetaMember(30, (MetaMemberFlags)0)]
         [ServerOnly]
+        [IgnoreDefValidation]
         public PlayerEventLog EventLog { get; set; }
         public IPlayerGuildState GuildState { get; set; }
 

@@ -1,6 +1,7 @@
 using Metacore.MergeMansion.Common.Options;
 using System;
 using GameLogic.Player.Items;
+using Metaplay.Core.Schedule;
 
 namespace Code.GameLogic.GameEvents
 {
@@ -27,5 +28,7 @@ namespace Code.GameLogic.GameEvents
         CoreSupportEventTokenType TokenType { get; }
 
         Option<CoreSupportEventTokenId> TokenIdOption { get; }
+
+        MetaRecurringCalendarSchedule Schedule { get; }
     }
 }

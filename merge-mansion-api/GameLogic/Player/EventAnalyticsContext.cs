@@ -23,5 +23,8 @@ namespace GameLogic.Player
         public EventAnalyticsContext(string context, string target, EventOfferSetId eventOfferSetId, EventLevelId eventLevelId, string impressionId)
         {
         }
+
+        [MetaMember(13, (MetaMemberFlags)0)]
+        public string Multiplier { get; set; }
     }
 }

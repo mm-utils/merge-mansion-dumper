@@ -89,7 +89,8 @@ namespace Code.GameLogic.GameEvents
 
         [MetaMember(23, (MetaMemberFlags)0)]
         public List<PlayerReward> ExtensionRewards { get; set; }
-        public CollectibleBoardEventId ActivableId { get; }
+
+        public CollectibleBoardEventId ActivableId => ConfigKey;
         public string DisplayShortInfo { get; }
         public MetaActivableTimelineSettings Timeline { get; }
 

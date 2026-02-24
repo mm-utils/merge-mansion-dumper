@@ -1,11 +1,13 @@
 using Metaplay.Core.Model;
 using System;
+using Metaplay.Core.Player;
 
 namespace Metaplay.Core.InAppPurchase
 {
     [MetaSerializable]
     public class PendingDynamicPurchaseContent
     {
+        [IgnoreDefValidation]
         [MetaMember(1, (MetaMemberFlags)0)]
         public DynamicPurchaseContent Content;
         [MetaMember(3, (MetaMemberFlags)0)]

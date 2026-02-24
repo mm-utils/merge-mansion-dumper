@@ -53,6 +53,8 @@ namespace GameLogic
         MixABooster = 45,
         RewardContainerPurchase = 46,
         RollTheDiceRollDone = 47,
-        WildItemConsume = 48
+        WildItemConsume = 48,
+        BuilderEventToolUse = 49,
+        BuilderEventWheelOfFortuneSpin = 50
     }
 }

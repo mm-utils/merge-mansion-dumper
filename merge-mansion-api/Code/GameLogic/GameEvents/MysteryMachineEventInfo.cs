@@ -59,7 +59,8 @@ namespace Code.GameLogic.GameEvents
 
         [MetaMember(14, (MetaMemberFlags)0)]
         public StoryDefinitionId StartMachineDialogue { get; set; }
-        public MysteryMachineEventId ActivableId { get; }
+
+        public MysteryMachineEventId ActivableId => ConfigKey;
         public string DisplayShortInfo { get; }
         public MetaActivableTimelineSettings Timeline { get; }
 

@@ -1,9 +1,11 @@
 using Metaplay.Core.Model;
 using System;
+using Metaplay.Core.Analytics;
 
 namespace Metaplay.Core.Message
 {
     [MetaSerializable]
+    [FirebaseAnalyticsIgnore]
     public struct ClientLaunchStatistics
     {
         [MetaMember(1, (MetaMemberFlags)0)]

@@ -27,7 +27,6 @@ namespace GameLogic.StatsTracking
         [MetaMember(105, (MetaMemberFlags)0)]
         public sealed override List<int> ObjectiveRequirements { get; set; }
         public override StatsObjectiveType ObjectiveType { get; }
-        public override string ObjectiveTypeString { get; }
 
         public StatsObjectiveCollectResource()
         {
@@ -42,7 +41,7 @@ namespace GameLogic.StatsTracking
         }
 
         [MetaMember(106, (MetaMemberFlags)0)]
-        public sealed override TaskType TypeTask { get; set; }
+        public TaskType TypeTask { get; set; }
 
         public StatsObjectiveCollectResource(string targetItemId, IStringId objectiveId, long snapshotAmount, List<int> objectiveRequirements, TaskType typeTask)
         {

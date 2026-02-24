@@ -31,7 +31,7 @@ namespace Code.GameLogic.GameEvents
         [MetaMember(6, (MetaMemberFlags)0)]
         public MetaActivableParams ActivableParams { get; set; }
         public EventOfferId ConfigKey => EventOfferId;
-        public EventOfferId ActivableId { get; }
+        public EventOfferId ActivableId => ConfigKey;
         public string DisplayShortInfo { get; }
         public MetaActivableTimelineSettings Timeline { get; }
 

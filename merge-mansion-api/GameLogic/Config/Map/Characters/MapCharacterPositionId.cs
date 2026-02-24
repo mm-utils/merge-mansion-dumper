@@ -307,6 +307,10 @@ namespace GameLogic.Config.Map.Characters
         AreaPetHomeMapMcLeod = 5811,
         WalkInClosetFirstMapCharacterPosition = 11799,
         WalkInClosetEntryMapMaddie = 11800,
-        WalkInClosetCharacter = 11801
+        WalkInClosetCharacter = 11801,
+        AreaPetHomeMapSirFluffsalot = 5812,
+        SpyRoomFirstMapCharacterPosition = 11999,
+        SpyRoomEntryMapMaddie = 12000,
+        SpyRoomCharacter = 12001
     }
 }

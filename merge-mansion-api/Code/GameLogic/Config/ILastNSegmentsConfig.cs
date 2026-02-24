@@ -12,5 +12,9 @@ namespace Code.GameLogic.Config
         List<int> AverageNumberOfTransactionsInNDaysSegments { get; }
 
         List<int> AverageTransactionValueInNDaysSegments { get; }
+
+        List<int> HighestTransactionValueInDaysSegments { get; }
+
+        List<int> TotalTransactionsDaysSegments { get; }
     }
 }

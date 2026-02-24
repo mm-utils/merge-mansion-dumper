@@ -49,6 +49,7 @@ using GameLogic.Config.Types;
 using GameLogic.Utility;
 using Code.GameLogic.Config;
 using Metacore.MergeMansion.Common.Options;
+using Code.GameLogic.GameEvents.DailyChallenges;
 
 namespace GameLogic.Player
 {
@@ -551,5 +552,15 @@ namespace GameLogic.Player
         private bool _modelEventsRegistered;
         [IgnoreDataMember]
         MetaTime GameLogic.Player.IPlayer.CurrentTime { get; }
+
+        private Dictionary<Type, Dictionary<Delegate, Action<PlayerEventBase>>> _eventStreamTypedHandlers;
+        [IgnoreDataMember]
+        public Option<PlayerLocation> LastKnownLocationOption { get; }
+
+        [MetaMember(317, (MetaMemberFlags)0)]
+        public DailyChallengesEventsHistoricalDataModel DailyChallengesEventsHistoricalData { get; set; }
+        public IBuilderEventMinigameData BuilderEventMinigameData { get; set; }
+
+        IBuilderEventMinigameData GameLogic.Player.IPlayer.BuilderEventMinigameData { get; }
     }
 }

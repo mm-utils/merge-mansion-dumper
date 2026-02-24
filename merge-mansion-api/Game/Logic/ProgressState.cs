@@ -82,14 +82,17 @@ namespace Game.Logic
         private CalendarBoardEventStatus currentEventBoardStatus { get; set; }
 
         [MetaMember(17, (MetaMemberFlags)0)]
+        [Transient]
         [ExcludeFromGdprExport]
         private MergeItem undoItemSellItem { get; set; }
 
         [MetaMember(18, (MetaMemberFlags)0)]
+        [Transient]
         [ExcludeFromGdprExport]
         private int undoItemSellCoordinateX { get; set; }
 
         [MetaMember(19, (MetaMemberFlags)0)]
+        [Transient]
         [ExcludeFromGdprExport]
         private int undoItemSellCoordinateY { get; set; }
 
@@ -109,6 +112,7 @@ namespace Game.Logic
         private List<string> visibleDecorations { get; set; }
 
         [MetaMember(27, (MetaMemberFlags)0)]
+        [Transient]
         [ExcludeFromGdprExport]
         private MergeBoardId undoBoardId { get; set; }
 

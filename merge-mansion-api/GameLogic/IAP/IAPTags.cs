@@ -80,6 +80,8 @@ namespace GameLogic.IAP
         ShopPackOffer_27 = 72,
         SuperPass_MPv2 = 73,
         PremiumPass_MPv2 = 74,
-        UpgradePremiumPass_MPv2 = 75
+        UpgradePremiumPass_MPv2 = 75,
+        ShopPackOffer_1199 = 76,
+        ShopPackOffer_2199 = 77
     }
 }

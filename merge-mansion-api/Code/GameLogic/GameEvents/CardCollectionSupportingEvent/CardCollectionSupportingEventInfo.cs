@@ -48,7 +48,7 @@ namespace Code.GameLogic.GameEvents.CardCollectionSupportingEvent
         private List<string> EventWhiteList { get; set; }
         public string DisplayShortInfo { get; }
         public MetaActivableTimelineSettings Timeline { get; }
-        public CardCollectionSupportingEventId ActivableId { get; }
+        public CardCollectionSupportingEventId ActivableId => ConfigKey;
         public string SharedEventId { get; }
 
         [IgnoreDataMember]

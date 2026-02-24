@@ -35,7 +35,8 @@ namespace GameLogic.Config.DecorationShop
 
         [MetaMember(7, (MetaMemberFlags)0)]
         public PlayerRequirement UnlockRequirement { get; set; }
-        public DecorationShopId ActivableId { get; }
+
+        public DecorationShopId ActivableId => ConfigKey;
         public string DisplayShortInfo { get; }
         public MetaActivableTimelineSettings Timeline { get; }
 

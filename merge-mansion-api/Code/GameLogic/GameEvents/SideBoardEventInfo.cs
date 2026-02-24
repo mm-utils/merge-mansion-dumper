@@ -91,7 +91,7 @@ namespace Code.GameLogic.GameEvents
         public MetaDuration? ShowTimeInCalendarPopupAfterFinish { get; set; }
         public bool HasCustomCurrency { get; }
         public SideBoardEventId ConfigKey => SideBoardEventId;
-        public SideBoardEventId ActivableId { get; }
+        public SideBoardEventId ActivableId => ConfigKey;
         public string DisplayShortInfo { get; }
         public MetaActivableTimelineSettings Timeline { get; }
 

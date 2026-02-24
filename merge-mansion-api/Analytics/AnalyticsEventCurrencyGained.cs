@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace Analytics
 {
-    [AnalyticsEvent(116, "Currency gained", 1, null, true, true, false)]
+    [AnalyticsEvent(116, "Currency gained", 1, null, false, true, false)]
     [MetaBlockedMembers(new int[] { 3, 6, 8 })]
     public class AnalyticsEventCurrencyGained : AnalyticsServersideEventBase
     {

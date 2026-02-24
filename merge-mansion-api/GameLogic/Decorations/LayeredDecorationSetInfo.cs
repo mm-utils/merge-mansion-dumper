@@ -19,7 +19,7 @@ namespace GameLogic.Decorations
         private List<DecorationLayerInfo> LayerInfos { get; set; }
         public LayeredDecorationSetId ConfigKey => SetId;
         public int MaxProgress { get; }
-        public IEnumerable<DecorationLayerInfo> Layers { get; }
+        public List<DecorationLayerInfo> Layers { get; }
 
         public LayeredDecorationSetInfo()
         {

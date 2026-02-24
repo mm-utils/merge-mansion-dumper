@@ -14,6 +14,8 @@ namespace Code.GameLogic.Player
 
         IDictionary<int, F64> AverageTransactionValueByLastNDays { get; }
 
-        F64? HighestTransactionPriceLast30Days { get; set; }
+        IDictionary<int, F64> HighestTransactionPriceByLastNDays { get; }
+
+        IDictionary<int, int> TotalTransactionsByLastNDays { get; }
     }
 }

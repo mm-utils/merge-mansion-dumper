@@ -92,7 +92,8 @@ namespace GameLogic.Banks
         [Description("Max number of currency banks activated to allow this one to be activated")]
         [MetaMember(20, (MetaMemberFlags)0)]
         public int? MaxActivationsGlobal { get; set; }
-        public CurrencyBankId ActivableId { get; }
+
+        public CurrencyBankId ActivableId => ConfigKey;
         public CurrencyBankId ConfigKey => CurrencyBankId;
         public string DisplayShortInfo { get; }
         public MetaActivableTimelineSettings Timeline { get; }

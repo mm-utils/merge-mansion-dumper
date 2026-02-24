@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace Metaplay.Core
 {
-    public class DynamicEnumJsonConverter : JsonConverter
+    internal class DynamicEnumJsonConverter : JsonConverter
     {
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {

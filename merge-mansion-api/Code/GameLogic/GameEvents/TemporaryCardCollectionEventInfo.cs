@@ -48,7 +48,8 @@ namespace Code.GameLogic.GameEvents
 
         [MetaMember(12, (MetaMemberFlags)0)]
         public List<PlayerReward> PrestigeRewards { get; set; }
-        public TemporaryCardCollectionEventId ActivableId { get; }
+
+        public TemporaryCardCollectionEventId ActivableId => ConfigKey;
         public string DisplayShortInfo { get; }
         public MetaActivableTimelineSettings Timeline { get; }
 

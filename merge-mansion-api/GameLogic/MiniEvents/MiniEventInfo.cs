@@ -49,7 +49,7 @@ namespace GameLogic.MiniEvents
         public string DisplayShortInfo { get; }
         public MetaActivableTimelineSettings Timeline { get; }
         public MiniEventId ConfigKey => MiniEventId;
-        public MiniEventId ActivableId { get; }
+        public MiniEventId ActivableId => ConfigKey;
 
         public MiniEventInfo()
         {

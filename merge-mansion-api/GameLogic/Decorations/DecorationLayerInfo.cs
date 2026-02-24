@@ -2,6 +2,7 @@ using Metaplay.Core.Model;
 using System;
 using Metaplay.Core;
 using GameLogic.Story;
+using GameLogic.Config;
 
 namespace GameLogic.Decorations
 {
@@ -27,5 +28,8 @@ namespace GameLogic.Decorations
         public DecorationLayerInfo(DecorationLayerId layerId, int requiredProgress, MetaRef<StoryElementInfo> beforeAppearDialogue, MetaRef<StoryElementInfo> afterAppearDialogue)
         {
         }
+
+        [MetaMember(5, (MetaMemberFlags)0)]
+        public DirectorGroupId DirectorGroupId { get; set; }
     }
 }

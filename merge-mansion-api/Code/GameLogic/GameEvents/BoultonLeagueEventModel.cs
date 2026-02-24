@@ -50,6 +50,7 @@ namespace Code.GameLogic.GameEvents
         {
         }
 
+        [IgnoreDataMember]
         public EventCategoryInfo CategoryInfo { get; }
 
         [MetaMember(9, (MetaMemberFlags)0)]
@@ -60,6 +61,7 @@ namespace Code.GameLogic.GameEvents
 
         [IgnoreDataMember]
         private List<BoultonLeagueDivisionParticipantSnapshot> _lastLeaderboardEntries;
+        [IgnoreDataMember]
         public Option<EventGroupId> GroupIdOption { get; }
     }
 }

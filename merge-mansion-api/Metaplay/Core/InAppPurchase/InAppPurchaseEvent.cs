@@ -2,6 +2,7 @@ using Metaplay.Core.Model;
 using Metaplay.Core.Serialization;
 using System;
 using Metaplay.Core.Math;
+using Metaplay.Core.Player;
 
 namespace Metaplay.Core.InAppPurchase
 {
@@ -54,6 +55,7 @@ namespace Metaplay.Core.InAppPurchase
         [MetaMember(11, (MetaMemberFlags)0)]
         public MetaTime ClaimTime { get; set; }
 
+        [IgnoreDefValidation]
         [MetaMember(13, (MetaMemberFlags)0)]
         public DynamicPurchaseContent DynamicContent { get; set; }
 
@@ -63,6 +65,7 @@ namespace Metaplay.Core.InAppPurchase
         [MetaMember(14, (MetaMemberFlags)0)]
         public ResolvedPurchaseContentBase ResolvedContent { get; set; }
 
+        [IgnoreDefValidation]
         [MetaMember(15, (MetaMemberFlags)0)]
         public ResolvedPurchaseMetaRewards ResolvedDynamicContent { get; set; }
 

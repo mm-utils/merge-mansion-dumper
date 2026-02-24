@@ -4,7 +4,7 @@ using GameLogic;
 
 namespace Code.GameLogic.Player.Requirements
 {
-    [MetaSerializableDerived(64)]
+    [MetaSerializableDerived(67)]
     public class CanCompleteHotspotFromMergeBoardRequirement : PlayerRequirement
     {
         [MetaMember(1, (MetaMemberFlags)0)]

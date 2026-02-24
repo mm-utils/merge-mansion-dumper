@@ -62,7 +62,7 @@ namespace Code.GameLogic.GameEvents
         public EventCategoryInfo CategoryInfo { get; set; }
 
         [IgnoreDataMember]
-        public AdStampCardEventId ActivableId { get; }
+        public AdStampCardEventId ActivableId => ConfigKey;
         public string DisplayShortInfo { get; }
         public MetaActivableTimelineSettings Timeline { get; }
         public MetaRecurringCalendarSchedule Schedule { get; }

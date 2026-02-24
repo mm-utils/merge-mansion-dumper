@@ -5,6 +5,7 @@ using Code.GameLogic.ExtraSpawns;
 using Code.GameLogic.FlashSales;
 using Code.GameLogic.GameEvents;
 using Code.GameLogic.GameEvents.CardCollectionSupportingEvent;
+using Code.GameLogic.GameEvents.DailyChallenges.Data;
 using Code.GameLogic.GameEvents.DailyScoop;
 using Code.GameLogic.GameEvents.SoloMilestone;
 using Code.GameLogic.Hotspots;
@@ -1202,5 +1203,95 @@ namespace GameLogic.Config
         [GameConfigSyntaxAdapter(new string[] { "ConfigKey -> ConfigKey #key" }, new string[] { }, false)]
         private GameConfigLibrary<LocationId, LocationInfo> Locations { get; set; }
         public Dictionary<MergeBoardId, List<HotspotId>> OpenMergeBoardHotspotsByMergeBoard { get; set; }
+
+        IDailyChallengesEventConfig GameLogic.Config.IMergeMansionGameConfig.DailyChallengesEventConfig { get; }
+
+        IBuilderEventConfig GameLogic.Config.IMergeMansionGameConfig.BuilderEventConfig { get; }
+
+        [GameConfigEntry("DailyChallengesWeeks", true, null)]
+        [GameConfigEntryTransform(typeof(DailyChallengesWeekDataSource))]
+        [GameConfigSyntaxAdapter(new string[] { "ConfigKey -> ConfigKey #key" }, new string[] { }, false)]
+        private GameConfigLibrary<DailyChallengesWeekId, DailyChallengesWeekData> DailyChallengesWeeks { get; set; }
+
+        [GameConfigEntry("DailyChallengesDays", true, null)]
+        [GameConfigEntryTransform(typeof(DailyChallengesDayDataSource))]
+        [GameConfigSyntaxAdapter(new string[] { "ConfigKey -> ConfigKey #key" }, new string[] { }, false)]
+        private GameConfigLibrary<DailyChallengesDayId, DailyChallengesDayData> DailyChallengesDays { get; set; }
+
+        [GameConfigEntry("DailyChallengesWeeksByMinigameId", true, null)]
+        [GameConfigEntryTransform(typeof(DailyChallengesWeekByMinigameIdDataSource))]
+        [GameConfigSyntaxAdapter(new string[] { "ConfigKey -> ConfigKey #key" }, new string[] { }, false)]
+        private GameConfigLibrary<DailyChallengesMinigameId, DailyChallengesWeekByMinigameIdData> DailyChallengesWeeksByMinigameId { get; set; }
+
+        [GameConfigEntry("DailyChallengesWeeksByPreviousCompletion", true, null)]
+        [GameConfigEntryTransform(typeof(DailyChallengeWeekByPreviousCompletionDataSource))]
+        [GameConfigSyntaxAdapter(new string[] { "ConfigKey -> ConfigKey #key" }, new string[] { }, false)]
+        private GameConfigLibrary<DailyChallengesWeekId, DailyChallengeWeekByPreviousCompletionData> DailyChallengesWeeksByPreviousCompletion { get; set; }
+
+        [GameConfigEntry("DailyChallengesMinigames", true, null)]
+        [GameConfigSyntaxAdapter(new string[] { "ConfigKey -> ConfigKey #key" }, new string[] { }, false)]
+        private GameConfigLibrary<DailyChallengesMinigameId, DailyChallengesMinigameData> DailyChallengesMinigames { get; set; }
+
+        [GameConfigEntry("DailyChallengesStandardObjectives", true, null)]
+        [GameConfigEntryTransform(typeof(DailyChallengesStandardObjectiveDataSource))]
+        [GameConfigSyntaxAdapter(new string[] { "ConfigKey -> ConfigKey #key" }, new string[] { }, false)]
+        private GameConfigLibrary<DailyChallengesStandardObjectiveId, DailyChallengesStandardObjectiveData> DailyChallengesStandardObjectives { get; set; }
+
+        [GameConfigEntry("DailyChallengesSpecialObjectives", true, null)]
+        [GameConfigEntryTransform(typeof(DailyChallengesSpecialObjectiveDataSource))]
+        [GameConfigSyntaxAdapter(new string[] { "ConfigKey -> ConfigKey #key" }, new string[] { }, false)]
+        private GameConfigLibrary<DailyChallengesSpecialObjectiveId, DailyChallengesSpecialObjectiveData> DailyChallengesSpecialObjectives { get; set; }
+
+        [GameConfigEntry("DailyChallengesMilestones", true, null)]
+        [GameConfigEntryTransform(typeof(DailyChallengesMilestoneDataSource))]
+        [GameConfigSyntaxAdapter(new string[] { "ConfigKey -> ConfigKey #key" }, new string[] { }, false)]
+        private GameConfigLibrary<DailyChallengesMilestoneId, DailyChallengesMilestoneData> DailyChallengesMilestones { get; set; }
+
+        [GameConfigEntry("DailyChallengesEventSettings", true, null)]
+        [GameConfigSyntaxAdapter(new string[] { "ConfigKey -> Member" }, new string[] { }, false)]
+        private DailyChallengesEventSettings DailyChallengesEventSettings { get; set; }
+
+        [GameConfigEntry("BuilderEventMinigames", true, null)]
+        [GameConfigEntryTransform(typeof(BuilderEventMinigameSource))]
+        [GameConfigSyntaxAdapter(new string[] { "ConfigKey -> ConfigKey #key" }, new string[] { }, false)]
+        private GameConfigLibrary<CoreSupportEventMinigameId, BuilderEventMinigameInfo> BuilderEventMinigames { get; set; }
+
+        [GameConfigEntry("BuilderEventCollections", true, null)]
+        [GameConfigEntryTransform(typeof(BuilderEventCollectionSource))]
+        [GameConfigSyntaxAdapter(new string[] { "ConfigKey -> ConfigKey #key" }, new string[] { }, false)]
+        private GameConfigLibrary<BuilderEventCollectionId, BuilderEventCollectionInfo> BuilderEventCollections { get; set; }
+
+        [GameConfigEntry("BuilderEventBuilds", true, null)]
+        [GameConfigEntryTransform(typeof(BuilderEventBuildSource))]
+        [GameConfigSyntaxAdapter(new string[] { "ConfigKey -> ConfigKey #key" }, new string[] { }, false)]
+        private GameConfigLibrary<BuilderEventBuildLevelId, BuilderEventBuildInfo> BuilderEventBuilds { get; set; }
+
+        [GameConfigEntry("BuilderEventTools", true, null)]
+        [GameConfigEntryTransform(typeof(BuilderEventToolSource))]
+        [GameConfigSyntaxAdapter(new string[] { "ConfigKey -> ConfigKey #key" }, new string[] { }, false)]
+        private GameConfigLibrary<BuilderEventToolId, BuilderEventToolInfo> BuilderEventTools { get; set; }
+
+        [GameConfigEntry("BuilderEventWheels", true, null)]
+        [GameConfigEntryTransform(typeof(BuilderEventWheelSource))]
+        [GameConfigSyntaxAdapter(new string[] { "ConfigKey -> ConfigKey #key" }, new string[] { }, false)]
+        private GameConfigLibrary<BuilderEventWheelId, BuilderEventWheelInfo> BuilderEventWheels { get; set; }
+
+        [GameConfigEntry("BuilderEventWheelParts", true, null)]
+        [GameConfigEntryTransform(typeof(BuilderEventWheelPartsSource))]
+        [GameConfigSyntaxAdapter(new string[] { "ConfigKey -> ConfigKey #key" }, new string[] { }, false)]
+        private GameConfigLibrary<BuilderEventWheelPartId, BuilderEventWheelPartInfo> BuilderEventWheelParts { get; set; }
+
+        [GameConfigEntry("BuilderEventTimers", true, null)]
+        [GameConfigEntryTransform(typeof(BuilderEventTimersSource))]
+        [GameConfigSyntaxAdapter(new string[] { "ConfigKey -> ConfigKey #key" }, new string[] { }, false)]
+        private GameConfigLibrary<BuilderEventTimerId, BuilderEventTimerInfo> BuilderEventTimers { get; set; }
+
+        [GameConfigEntry("BuilderEventTimedRewards", true, null)]
+        [GameConfigEntryTransform(typeof(BuilderEventTimedRewardsSource))]
+        [GameConfigSyntaxAdapter(new string[] { "ConfigKey -> ConfigKey #key" }, new string[] { }, false)]
+        private GameConfigLibrary<BuilderEventTimedRewardId, BuilderEventTimedRewardInfo> BuilderEventTimedRewards { get; set; }
+        public List<InAppProductId> CurrencyBankIAPs { get; set; }
+        public IDailyChallengesEventConfig DailyChallengesEventConfig { get; set; }
+        public IBuilderEventConfig BuilderEventConfig { get; set; }
     }
 }

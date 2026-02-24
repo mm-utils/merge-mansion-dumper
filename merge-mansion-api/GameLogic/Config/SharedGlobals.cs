@@ -10,6 +10,7 @@ using Code.GameLogic.GameEvents;
 using Code.GameLogic.Config;
 using Metaplay.Core.Player;
 using GameLogic.Player;
+using GameLogic.Area;
 
 namespace GameLogic.Config
 {
@@ -209,5 +210,11 @@ namespace GameLogic.Config
 
         [MetaMember(84, (MetaMemberFlags)0)]
         public bool UseStreamlinedStoryEventFlow { get; set; }
+
+        [MetaMember(85, (MetaMemberFlags)0)]
+        public List<AreaId> AreaPriorityOrder { get; set; }
+
+        [MetaMember(86, (MetaMemberFlags)0)]
+        public bool UseOldPickWeighted { get; set; }
     }
 }

@@ -229,5 +229,6 @@ namespace GameLogic.Config
         public static DirectorGroupId TutorialPouch;
         public static DirectorGroupId RollTheDiceFTUE;
         public static DirectorGroupId WildItemFTUE;
+        public static DirectorGroupId BuilderEventFTUE;
     }
 }

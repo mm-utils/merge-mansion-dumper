@@ -38,7 +38,8 @@ namespace Code.GameLogic.GameEvents
 
         [MetaMember(9, (MetaMemberFlags)0)]
         public BoultonLeagueMatchmakingAlgorithm MatchmakingAlgorithm { get; set; }
-        public BoultonLeagueEventId ActivableId { get; }
+
+        public BoultonLeagueEventId ActivableId => ConfigKey;
         public BoultonLeagueEventId ConfigKey => EventId;
         public string DisplayShortInfo { get; }
         public MetaActivableTimelineSettings Timeline { get; }

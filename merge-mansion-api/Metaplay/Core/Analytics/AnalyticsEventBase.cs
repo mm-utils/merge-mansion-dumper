@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 namespace Metaplay.Core.Analytics
 {
     [MetaSerializable]
-    public abstract class AnalyticsEventBase
+    public abstract class AnalyticsEventBase : IMetaIntegration<AnalyticsEventBase>, IMetaIntegration
     {
         protected AnalyticsEventBase()
         {

@@ -15,9 +15,6 @@ namespace GameLogic.Player
         public override int TotalNumPurchases { get; }
         public override F64 TotalSpend { get; }
 
-        [MetaMember(1, (MetaMemberFlags)0)]
-        public List<InAppPurchaseHistory.RecentPurchaseEvent> RecentPurchasesForMedianPrice { get; set; }
-
         [MetaMember(2, (MetaMemberFlags)0)]
         public Dictionary<int, F64> ModesPerNumberOfPurchases { get; set; }
 
@@ -26,5 +23,8 @@ namespace GameLogic.Player
 
         [MetaMember(4, (MetaMemberFlags)0)]
         public F64 TotalWebshopPurchaseSpend { get; set; }
+
+        [MetaMember(1, (MetaMemberFlags)0)]
+        public List<InAppPurchaseHistory.RecentPurchaseEvent> RecentPurchasesNoSeasonPass { get; set; }
     }
 }

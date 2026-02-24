@@ -34,7 +34,7 @@ namespace GameLogic.StatsTracking
         }
 
         [MetaMember(105, (MetaMemberFlags)0)]
-        public sealed override TaskType TypeTask { get; set; }
+        public TaskType TypeTask { get; set; }
 
         public StatsObjectiveBurstBubbles(IStringId objectiveId, long snapshotAmount, List<int> objectiveRequirements, TaskType typeTask)
         {

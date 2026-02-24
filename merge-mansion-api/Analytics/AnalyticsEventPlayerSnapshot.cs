@@ -169,5 +169,10 @@ namespace Analytics
         [MetaMember(34, (MetaMemberFlags)0)]
         [Description("Player haptics state, are the haptics on or off")]
         public bool HapticsIsOn { get; set; }
+
+        [JsonProperty("notifications_are_on")]
+        [MetaMember(35, (MetaMemberFlags)0)]
+        [Description("whether notifications are enabled or not")]
+        public bool NotificationsAreOn { get; set; }
     }
 }

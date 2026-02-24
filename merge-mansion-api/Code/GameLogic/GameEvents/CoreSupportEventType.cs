@@ -11,6 +11,8 @@ namespace Code.GameLogic.GameEvents
         DigEvent = 1,
         ClassicRaces = 2,
         AutoMerge = 3,
-        RollTheDice = 4
+        RollTheDice = 4,
+        DailyChallengesEvent = 5,
+        BuilderEvent = 6
     }
 }

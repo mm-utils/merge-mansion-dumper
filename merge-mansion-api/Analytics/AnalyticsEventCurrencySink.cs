@@ -9,7 +9,7 @@ using GameLogic;
 
 namespace Analytics
 {
-    [AnalyticsEvent(115, "Currency sink", 1, null, true, true, false)]
+    [AnalyticsEvent(115, "Currency sink", 1, null, false, true, false)]
     [MetaBlockedMembers(new int[] { 2, 10 })]
     public class AnalyticsEventCurrencySink : AnalyticsServersideEventBase
     {
@@ -133,5 +133,10 @@ namespace Analytics
         [MetaMember(22, (MetaMemberFlags)0)]
         [Description("Task Id where player used Wild Item on to get an Item")]
         public string GoalId { get; set; }
+
+        [JsonProperty("multiplier")]
+        [MetaMember(23, (MetaMemberFlags)0)]
+        [Description("Has any multiplier been applied")]
+        public string Multiplier { get; set; }
     }
 }

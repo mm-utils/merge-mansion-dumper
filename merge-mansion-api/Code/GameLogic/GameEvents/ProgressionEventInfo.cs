@@ -74,7 +74,8 @@ namespace Code.GameLogic.GameEvents
 
         [MetaMember(22, (MetaMemberFlags)0)]
         private List<MetaRef<EventLevelInfo>> StoryTriggeringLevelRefs { get; set; }
-        public ProgressionEventId ActivableId { get; }
+
+        public ProgressionEventId ActivableId => ConfigKey;
         public string DisplayShortInfo { get; }
         public MetaActivableTimelineSettings Timeline { get; }
 

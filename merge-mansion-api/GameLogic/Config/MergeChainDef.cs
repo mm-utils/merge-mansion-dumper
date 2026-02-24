@@ -5,7 +5,7 @@ using GameLogic.MergeChains;
 namespace GameLogic.Config
 {
     [MetaSerializableDerived(3)]
-    public class MergeChainDef : ConfigDefinition<MergeChainId, MergeChainDefinition>
+    public class MergeChainDef : ConfigDefinition<MergeChainId, IMergeChainDefinition>
     {
         public override MergeChainDefinition? GetDef(IMergeMansionGameConfig config)
         {

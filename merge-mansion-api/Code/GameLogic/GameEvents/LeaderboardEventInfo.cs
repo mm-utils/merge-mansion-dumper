@@ -60,7 +60,8 @@ namespace Code.GameLogic.GameEvents
 
         [MetaMember(14, (MetaMemberFlags)0)]
         public StoryDefinitionId EndDialogue { get; set; }
-        public LeaderboardEventId ActivableId { get; }
+
+        public LeaderboardEventId ActivableId => ConfigKey;
         public string DisplayShortInfo { get; }
         public MetaActivableTimelineSettings Timeline { get; }
 

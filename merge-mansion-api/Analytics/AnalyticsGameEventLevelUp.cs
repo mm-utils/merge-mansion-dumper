@@ -43,7 +43,11 @@ namespace Analytics
         public int LevelGroup;
         [JsonProperty("placement")]
         [MetaMember(7, (MetaMemberFlags)0)]
-        [Description("Placement where the level was reached (Ad Stamp Card Event only)")]
+        [Description("Placement where the level was reached")]
         public string Placement;
+        [JsonProperty("unlock_order")]
+        [MetaMember(8, (MetaMemberFlags)0)]
+        [Description("Unlock order of difficulty")]
+        public int UnlockOrder;
     }
 }

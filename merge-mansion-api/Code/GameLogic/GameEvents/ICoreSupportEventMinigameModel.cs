@@ -1,3 +1,4 @@
+using Code.GameLogic.GameEvents.DailyChallenges.Data;
 using Metaplay.Core.Model;
 
 namespace Code.GameLogic.GameEvents

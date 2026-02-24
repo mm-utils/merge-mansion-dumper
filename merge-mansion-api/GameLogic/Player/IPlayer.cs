@@ -34,6 +34,7 @@ using GameLogic.Player.Leaderboard.ClassicRacesEvent;
 using GameLogic.Config.Types;
 using Metacore.MergeMansion.Common.Options;
 using Code.GameLogic.Config;
+using Code.GameLogic.GameEvents.DailyChallenges;
 
 namespace GameLogic.Player
 {
@@ -232,6 +233,14 @@ namespace GameLogic.Player
         LocationId StartLocation { get; }
 
         MergeBoard GarageMergeBoard { get; }
+
+        PlayerSoloMilestoneEventModel SoloMilestoneEvents { get; }
+
+        Option<PlayerLocation> LastKnownLocationOption { get; }
+
+        IBuilderEventMinigameData BuilderEventMinigameData { get; }
+
+        DailyChallengesEventsHistoricalDataModel DailyChallengesEventsHistoricalData { get; }
     // Slot: 50
     //void AddScriptedEvent(IScriptedEventCondition condition, ISerializedAction action);
     }

@@ -45,7 +45,7 @@ namespace GameLogic.StatsTracking
         }
 
         [MetaMember(106, (MetaMemberFlags)0)]
-        public sealed override TaskType TypeTask { get; set; }
+        public TaskType TypeTask { get; set; }
 
         public StatsObjectiveMerge(string targetItemType, IStringId objectiveId, long snapshotAmount, List<int> objectiveRequirements, TaskType typeTask)
         {

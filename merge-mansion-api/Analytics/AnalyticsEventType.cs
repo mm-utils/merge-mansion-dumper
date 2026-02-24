@@ -186,6 +186,8 @@ namespace Analytics
         NotificationPermissionAnswered = 175,
         NotificationReceived = 176,
         LeagueNotStarted = 177,
-        ClientVersionCheck = 178
+        ClientVersionCheck = 178,
+        DailyChallengesDailyObjectiveStatus = 179,
+        DailyChallengesWeeklyMilestoneStatus = 180
     }
 }

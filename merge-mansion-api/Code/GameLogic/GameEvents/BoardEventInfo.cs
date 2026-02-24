@@ -143,7 +143,8 @@ namespace Code.GameLogic.GameEvents
 
         [MetaMember(44, (MetaMemberFlags)0)]
         public List<PlayerReward> ExtensionRewards { get; set; }
-        public EventId ActivableId { get; }
+
+        public EventId ActivableId => ConfigKey;
         public string DisplayShortInfo { get; }
         public MetaActivableTimelineSettings Timeline { get; }
         public bool HasCustomCurrency { get; }

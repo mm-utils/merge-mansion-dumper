@@ -5,6 +5,7 @@ using Code.GameLogic.ExtraSpawns;
 using Code.GameLogic.FlashSales;
 using Code.GameLogic.GameEvents;
 using Code.GameLogic.GameEvents.CardCollectionSupportingEvent;
+using Code.GameLogic.GameEvents.DailyChallenges.Data;
 using Code.GameLogic.GameEvents.DailyScoop;
 using Code.GameLogic.GameEvents.SoloMilestone;
 using Code.GameLogic.Hotspots;
@@ -520,5 +521,11 @@ namespace GameLogic.Config
         Dictionary<LocationId, LocationInfo> Locations { get; }
 
         Dictionary<MergeBoardId, List<HotspotId>> OpenMergeBoardHotspotsByMergeBoard { get; }
+
+        IDailyChallengesEventConfig DailyChallengesEventConfig { get; }
+
+        List<InAppProductId> CurrencyBankIAPs { get; }
+
+        IBuilderEventConfig BuilderEventConfig { get; }
     }
 }

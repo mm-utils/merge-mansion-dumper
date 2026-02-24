@@ -71,7 +71,7 @@ namespace Code.GameLogic.GameEvents
         [MetaMember(31, (MetaMemberFlags)0)]
         public PlayerRequirement UnlockRequirement { get; set; }
         public bool HasCustomCurrency { get; }
-        public EventId ActivableId { get; }
+        public EventId ActivableId => ConfigKey;
         public string DisplayShortInfo { get; }
         public MetaActivableTimelineSettings Timeline { get; }
         public bool HasHudButton { get; }

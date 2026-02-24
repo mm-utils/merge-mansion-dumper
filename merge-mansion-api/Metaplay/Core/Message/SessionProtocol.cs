@@ -496,5 +496,12 @@ namespace Metaplay.Core.Message
             [MetaMember(1, (MetaMemberFlags)0)]
             public PlayerBanInfo BanInfo { get; set; }
         }
+
+        [MetaMessage(113, (MessageDirection)2, true)]
+        public class SessionStartSuccessFragment : MetaMessage
+        {
+            [MetaMember(1, (MetaMemberFlags)0)]
+            public byte[] Fragment;
+        }
     }
 }

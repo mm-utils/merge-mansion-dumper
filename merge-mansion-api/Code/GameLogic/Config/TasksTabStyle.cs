@@ -9,6 +9,7 @@ namespace Code.GameLogic.Config
     {
         Default = 0,
         AllEventsVsTasks = 1,
-        CoreSupportEventsAndTasksVsEvents = 2
+        CoreSupportEventsAndTasksVsEvents = 2,
+        OnlyEvents = 3
     }
 }
